@@ -1,12 +1,20 @@
 version: "3"
 
 services:
-  api:
-    container_name: backend
+  swecommerce:
+    container_name: swecommerce
     restart: always
-    build: .
+    build: ./swEcommerce/.
     ports:
-      - "3000:3000"
+      - "3000:3001"
+    links:
+      - pg
+  swetracking:
+    container_name: swetracking
+    restart: always
+    build: ./swTracking/.
+    ports:
+      - "4000:3002"
     links:
       - pg
   pg:
