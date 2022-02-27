@@ -17,5 +17,5 @@ app.use(require("./src/route/rutasHome.js"));
 app.listen(port, () => {
   clear();
   superPro(` ---> Server is running on port ${port}`);
-  success(`\n Open ctrl+click http://localhost:${port}/ `);
+  success(`\n Open ctrl+click http://localhost:3000/ `);
 });
