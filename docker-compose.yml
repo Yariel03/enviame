@@ -10,9 +10,9 @@ services:
     links:
       - pg
   swetracking:
-    container_name: swetracking
+    container_name: swdelivery
     restart: always
-    build: ./swTracking/.
+    build: ./swdelivery/.
     ports:
       - "4000:3002"
     links:
@@ -24,8 +24,8 @@ services:
     environment:
       - DATABASE_HOST=127.0.0.1
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD= postgres
-      - POSTGRES_DB= enviamedb
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=enviamedb
     ports:
       - "5432:5432"
     volumes:
