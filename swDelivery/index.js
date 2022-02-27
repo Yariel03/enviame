@@ -3,7 +3,7 @@ const cors = require("cors");
 const { superPro, clear, success } = require("./src/helpers/message.js");
 
 const app = express();
-const port = 3000;
+const port = 3002;
 
 // COMMENT: middleware
 app.use(cors());
@@ -17,5 +17,5 @@ app.use(require("./src/route/rutasHome.js"));
 app.listen(port, () => {
   clear();
   superPro(` ---> Server is running on port ${port}`);
-  success("\n Open ctrl+click http://localhost:3000/ ");
+  success(`\n Welcome swDelivery Open ctrl+click http://localhost:${port}/ `);
 });
