@@ -1,0 +1,47 @@
+###agregar Productos
+POST http://localhost:3001/seller/newproduct
+Content-Type: application/json
+
+{
+    "name": "chompas",
+    "short_description": "chompas de cuero",
+    "idSeller": 1,
+    "stock": 24
+}
+
+### listar Productos por vendedores
+GET http://localhost:3001/sellers/1/products
+Content-Type: application/json
+
+### listar producto por id del vendedor y por id del producto
+GET http://localhost:3001/seller/1/product/1
+Content-Type: application/json
+
+
+### editar producto  por el vendedor y por el id del producto
+PUT http://localhost:3001/seller/1/product/5
+Content-Type: application/json
+
+{
+    "name": "chompa americana",
+    "short_description": "chompas de cuero"
+}
+
+
+### eliminar producto por vendedor y  por id del producto
+DELETE  http://localhost:3001/seller/1/product/7
+Content-Type: application/json
+
+
+### listar todos las ordenes de sus productos
+GET http://localhost:3001/seller/1/orders/
+Content-Type: application/json
+
+### Modificar el status de una orden
+PUT http://localhost:3001/seller/order/1/state/2
+Content-Type: application/json
+
+
+### Modificar el status de una orden
+PUT http://localhost:3001/seller/order/4/state/3
+Content-Type: application/json

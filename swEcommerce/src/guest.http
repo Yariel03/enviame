@@ -1,0 +1,18 @@
+
+###Registrar usuario sin token
+POST http://localhost:3001/guest
+Content-Type: application/json
+
+{
+    "name": "julio",
+    "short_description": "Perez",
+    "email": "julio3@nomail.com",
+    "password": "123456",
+    "shipping_address": "Calle de usuario comprador 123"
+}
+
+
+
+
+
+

@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const router = Router();
-// const { pool } = require("./../conexion/pg");
 
 // COMMENT:Version 1
 
@@ -8,7 +7,7 @@ router.get("/", async (req, res) => {
   res.status(200).json({
     message: "Bienvenido a la api del test Ecommerce",
     info: "Funcionando al 100%",
-    author: "Alexander Baldeon",
+    author: "Alexander Baldeon // @yarielbaldeon",
   });
 });
 
