@@ -9,14 +9,23 @@ services:
       - "3000:3001"
     links:
       - pg
+    depends_on:
+      - pg
+    # volumes:
+    #   - "./swEcommerce/:/usr/src/app/"
+
   swetracking:
     container_name: swdelivery
     restart: always
-    build: ./swdelivery/.
+    build: ./swDelivery/.
     ports:
       - "4000:3002"
     links:
       - pg
+    depends_on:
+      - pg
+    # volumes:
+    #   - "./swDelivery/:/usr/src/app/"
   pg:
     container_name: postgres
     image: postgres

@@ -17,6 +17,6 @@ app.use(require("./src/route/rutasAdmin"));
 //COMMENT: create a server
 app.listen(port, () => {
   clear();
-  superPro(` ---> Server is running on port ${port}`);
+  superPro(` ---> Server is running on port 4000`);
   success(`\n Welcome swDelivery Open ctrl+click http://localhost:4000/ `);
 });

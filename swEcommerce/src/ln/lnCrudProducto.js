@@ -4,6 +4,11 @@ const {
   Producto,
   updateProduct,
   deleteProduct,
+  allProducts,
+  buyProduct,
+  allOrderSeller,
+  UpdateStateOrders,
+  cancelOrder,
 } = require("../core/crudProducto.js");
 
 const lninsertProducto = async (req, res) => {
@@ -42,10 +47,43 @@ const lneditarProduct = async (req, res) => {
   res.json(respuesta);
 };
 
+const lnlistarAllProducts = async (req, res) => {
+  respuesta = await allProducts();
+  res.json(respuesta);
+};
+
+const lnbuyProduct = async (req, res) => {
+  respuesta = await buyProduct(
+    req.params.idproduct,
+    req.params.cant,
+    req.params.deliveryinformation,
+    req.params.idUser
+  );
+  res.json(respuesta);
+};
+
+const lnListarOrders = async (req, res) => {
+  respuesta = await allOrderSeller(req.params.idseller);
+  res.json(respuesta);
+};
+const lnUpdateStateOrders = async (req, res) => {
+  respuesta = await UpdateStateOrders(req.params.idorder, req.params.state);
+  res.json(respuesta);
+};
+const lnCancelOrder = async (req, res) => {
+  respuesta = await cancelOrder(req.params.idorder, req.params.state);
+  res.json(respuesta);
+};
+
 module.exports = {
   lninsertProducto,
   lnbuscarProducto,
   lnlistarProductos,
   lneditarProduct,
   lneliminarProducts,
+  lnlistarAllProducts,
+  lnbuyProduct,
+  lnListarOrders,
+  lnUpdateStateOrders,
+  lnCancelOrder,
 };

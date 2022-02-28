@@ -31,3 +31,17 @@ Content-Type: application/json
 ### eliminar producto por vendedor y  por id del producto
 DELETE  http://localhost:3001/seller/1/product/7
 Content-Type: application/json
+
+
+### listar todos las ordenes de sus productos
+GET http://localhost:3001/seller/1/orders/
+Content-Type: application/json
+
+### Modificar el status de una orden
+PUT http://localhost:3001/seller/order/1/state/2
+Content-Type: application/json
+
+
+### Modificar el status de una orden
+PUT http://localhost:3001/seller/order/4/state/3
+Content-Type: application/json

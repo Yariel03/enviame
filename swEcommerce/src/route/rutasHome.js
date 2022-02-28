@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   res.status(200).json({
     message: "Bienvenido a la api del test Ecommerce",
     info: "Funcionando al 100%",
-    author: "Alexander Baldeon",
+    author: "Alexander Baldeon // @yarielbaldeon",
   });
 });
 

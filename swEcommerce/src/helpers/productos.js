@@ -35,7 +35,36 @@ const newProductoSeller = async (idProducto, idSeller, stock) => {
   }
 };
 
+const stockProduct = async (idProducto) => {
+  let respuesta = "";
+  const query = `select stock from sellerwithproduct where id=${idProducto}`;
+  try {
+    respuesta = await pool.query(query);
+    return respuesta.rows[0];
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const updateStock = async (idProduct, stock, cant) => {
+  let respuesta = "";
+  const query = `UPDATE sellerwithproduct SET stock = ${
+    stock.stock - cant
+  } WHERE id_product = ${idProduct} returning stock`;
+  try {
+    respuesta = await pool.query(query);
+    console.log("respuesta", respuesta.rows[0]);
+    return respuesta.rows[0];
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 module.exports = {
   newProducto,
   newProductoSeller,
+  stockProduct,
+  updateStock,
 };

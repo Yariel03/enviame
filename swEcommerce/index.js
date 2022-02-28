@@ -15,10 +15,11 @@ app.use(require("./src/route/rutasHome.js"));
 app.use(require("./src/route/rutasAdmin.js"));
 app.use(require("./src/route/rutasSeller.js"));
 app.use(require("./src/route/rutasGuest.js"));
+app.use(require("./src/route/rutasMarketplace.js"));
 
 //COMMENT: create a server
 app.listen(port, () => {
   clear();
   superPro(` ---> Server is running on port 3000`);
-  success(`\n Open ctrl+click http://localhost:3000/ `);
+  success(`\n Welcome swEcommerce Open ctrl+click http://localhost:3000/ `);
 });

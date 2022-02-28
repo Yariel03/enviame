@@ -6,6 +6,8 @@ const {
   lnbuscarProducto,
   lneditarProduct,
   lneliminarProducts,
+  lnListarOrders,
+  lnUpdateStateOrders,
 } = require("../ln/lnCrudProducto.js");
 
 // comment: Crear nuevo producto
@@ -18,5 +20,9 @@ router.get("/seller/:idseller/product/:idproduct", lnbuscarProducto);
 router.put("/seller/:idseller/product/:idproduct", lneditarProduct);
 
 router.delete("/seller/:idseller/product/:idproduct", lneliminarProducts);
+
+router.get("/seller/:idseller/orders/", lnListarOrders);
+
+router.put("/seller/order/:idorder/state/:state", lnUpdateStateOrders);
 
 module.exports = router;
