@@ -23,3 +23,5 @@ app.listen(port, () => {
   superPro(` ---> Server is running on port 3000`);
   success(`\n Welcome swEcommerce Open ctrl+click http://localhost:3000/ `);
 });
+
+module.exports = app;

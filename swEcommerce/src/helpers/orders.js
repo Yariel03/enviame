@@ -55,8 +55,13 @@ const currentStateOrder = async (id_order) => {
   }
 };
 
+const passToPass = async (currentState, newState) => {
+  let diff = newState - currentState;
+  return diff == 1 ? true : false;
+};
 module.exports = {
   newOrder,
   insertStateOrder,
   currentStateOrder,
+  passToPass,
 };

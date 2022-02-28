@@ -1,4 +1,5 @@
 const { pool } = require("../conexion/pg");
+const axios = require("axios");
 const {
   newProducto,
   newProductoSeller,
@@ -10,6 +11,7 @@ const {
   newOrder,
   insertStateOrder,
   currentStateOrder,
+  passToPass,
 } = require("../helpers/orders");
 const insertProductos = async (name, short_description, stock, idSeller) => {
   try {
@@ -80,10 +82,21 @@ const allOrderSeller = async (idUser, tipo) => {
 };
 const UpdateStateOrders = async (idOrder, state) => {
   let currentState = await currentStateOrder(idOrder);
-  if (currentState.id_order_state + 1 == state) {
-    const query = `UPDATE orderwithstate set id_order_State = ${state} where id_order= ${idOrder} returning id`;
 
-    return exec(query);
+  if (passToPass(currentState.id_order_state, state)) {
+    if (state == 4) {
+      const headers = { "content-type": "application/json" };
+      const body = {
+        id_order: idOrder,
+        id_order_state: state,
+      };
+      webhook = "http://localhost:4000/webhook/notification/";
+      axios.post(webhook, body, { headers });
+      return;
+    } else {
+      const query = `UPDATE orderwithstate set id_order_State = ${state} where id_order= ${idOrder} returning id`;
+      return exec(query);
+    }
   } else {
     return {
       success: false,
