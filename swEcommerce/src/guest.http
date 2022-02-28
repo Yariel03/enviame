@@ -1,6 +1,6 @@
 
 ###Registrar usuario sin token
-POST http://localhost:3001/guest
+POST http://localhost:3000/guest
 Content-Type: application/json
 
 {

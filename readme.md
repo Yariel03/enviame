@@ -8,13 +8,13 @@ Microservicios en contenedores para prueba tecnica
 
 # Diagrama de Microservicios
 
-![Alt text](/diagramas/db2.png)
+![Alt text](/diagramas/backend.png)
 
 # Tecnologias ocupadas
 
 - nodeJs 14
 - framework: expres
-- db: postgresql `al no existir restriccion en el manejo de base de datos, tome la libertad de usarla`
+- db: postgresql `al no existir restriccion en el manejo de base de datos, tome la libertad de usar pg`
 - dbms: pgAdmin
 
 ## Requisitos

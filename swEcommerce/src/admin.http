@@ -1,24 +1,24 @@
 
 ###agregar vendedores
-POST http://localhost:3001/admin/newseller
+POST http://localhost:3000/admin/newseller
 Content-Type: application/json
 
 {
-    "name_pro": "asdfas",
+    "name": "vendedor 2",
     "short_description": "Perez",
-    "email": "luis30@nomail.com",
+    "email": "luis2@nomail.com",
     "password": "123456",
     "wharehouse": "Calle falsa 123"
 }
 
 
 ### listar vendedor por id
-GET http://localhost:3001/admin/seller/1
+GET http://localhost:3000/admin/seller/3
 Content-Type: application/json
 
 
 ### editar vendedor por id
-PUT http://localhost:3001/admin/seller/1
+PUT http://localhost:3000/admin/seller/2
 Content-Type: application/json
 
 {
@@ -27,21 +27,21 @@ Content-Type: application/json
 
 
 ### listar vendedores
-GET http://localhost:3001/admin/sellers/
+GET http://localhost:3000/admin/sellers/
 Content-Type: application/json
 
 
 ### eliminar vendedor por id
-PUT http://localhost:3001/admin/seller/2
+PUT http://localhost:3000/admin/seller/2
 Content-Type: application/json
 
 
 ### Cancelar pedidos 
 
-PUT http://localhost:3001/marketplace/cancel/order/2/state/5
+PUT http://localhost:3000/marketplace/cancel/order/2/state/5
 Content-Type: application/json
 
 
 ### listar Order todas las ordenes 
- http://localhost:3001/admin/orders
+ http://localhost:3000/admin/orders
 Content-Type: application/json

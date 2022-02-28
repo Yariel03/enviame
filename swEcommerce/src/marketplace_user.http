@@ -1,25 +1,25 @@
 
 ### listar todos los productos con su respectivos vendedores
-GET http://localhost:3001/marketplace/products/
+GET http://localhost:3000/marketplace/products/
 Content-Type: application/json
 
 ### comprar un producto
-GET http://localhost:3001/marketplace/products/buy/9/quality/2/calle1/1
+GET http://localhost:3000/marketplace/products/buy/9/quality/2/calle1/1
 Content-Type: application/json
 
 
 ### cancelar order
-PUT http://localhost:3001/marketplace/cancel/order/2/state/5
+PUT http://localhost:3000/marketplace/cancel/order/2/state/5
 Content-Type: application/json
 
 ### ver order
 
-GET http://localhost:3001/seller/1/orders/
+GET http://localhost:3000/seller/1/orders/
 Content-Type: application/json
 
 
 ### listar Order todas sus ordenes 
- http://localhost:3001/marketplace/1/orders/0
+ http://localhost:3000/marketplace/1/orders/0
 Content-Type: application/json
 
 

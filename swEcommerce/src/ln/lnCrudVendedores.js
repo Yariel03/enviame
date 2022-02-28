@@ -8,14 +8,8 @@ const {
 } = require("../core/crudVendedor.js");
 
 const lninsertVendedores = async (req, res) => {
-  const { name_pro, short_descripcion, email, password, wharehouse } = req.body;
-  await insertVendedores(
-    name_pro,
-    short_descripcion,
-    email,
-    password,
-    wharehouse
-  )
+  const { name, short_description, email, password, wharehouse } = req.body;
+  await insertVendedores(name, short_description, email, password, wharehouse)
     .then((respuesta) => {
       res.status(200).json({ success: true, respuesta: respuesta });
     })
