@@ -1,0 +1,42 @@
+
+###agregar vendedores
+POST http://localhost:3001/admin/newseller
+Content-Type: application/json
+
+{
+    "name_pro": "asdfas",
+    "short_description": "Perez",
+    "email": "luis30@nomail.com",
+    "password": "123456",
+    "wharehouse": "Calle falsa 123"
+}
+
+
+### listar vendedor por id
+GET http://localhost:3001/admin/seller/1
+Content-Type: application/json
+
+
+### editar vendedor por id
+PUT http://localhost:3001/admin/seller/1
+Content-Type: application/json
+
+{
+    "wharehouse": "Otra Calle falsa 123"
+}
+
+
+### listar vendedores
+GET http://localhost:3001/admin/sellers/
+Content-Type: application/json
+
+
+### eliminar vendedor por id
+PUT http://localhost:3001/admin/seller/2
+Content-Type: application/json
+
+
+
+
+
+

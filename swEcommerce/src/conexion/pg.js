@@ -2,10 +2,10 @@ const { Pool } = require("pg");
 const { superPro, error } = require("./../helpers/message.js");
 
 const pool = new Pool({
-  host: "pg",
+  host: "yariel.dev",
   user: "postgres",
-  password: "postgres",
-  database: "enviamedb",
+  password: "D3s4rr0ll0",
+  database: "dbenviametest",
   port: "5432",
 });
 

@@ -12,10 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 
 //Comment:Rutas
 app.use(require("./src/route/rutasHome.js"));
+app.use(require("./src/route/rutasAdmin.js"));
 
 //COMMENT: create a server
 app.listen(port, () => {
   clear();
-  superPro(` ---> Server is running on port ${port}`);
+  superPro(` ---> Server is running on port 3000`);
   success(`\n Open ctrl+click http://localhost:3000/ `);
 });
