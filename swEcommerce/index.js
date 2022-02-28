@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 //Comment:Rutas
 app.use(require("./src/route/rutasHome.js"));
 app.use(require("./src/route/rutasAdmin.js"));
+app.use(require("./src/route/rutasSeller.js"));
+app.use(require("./src/route/rutasGuest.js"));
 
 //COMMENT: create a server
 app.listen(port, () => {
