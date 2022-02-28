@@ -13,7 +13,7 @@ Content-Type: application/json
 GET http://localhost:3001/sellers/1/products
 Content-Type: application/json
 
-### listar producto por id del usuario y por id del producto
+### listar producto por id del vendedor y por id del producto
 GET http://localhost:3001/seller/1/product/1
 Content-Type: application/json
 
@@ -29,5 +29,5 @@ Content-Type: application/json
 
 
 ### eliminar producto por vendedor y  por id del producto
-DELETE  http://localhost:3001/seller/1/product/6
+DELETE  http://localhost:3001/seller/1/product/7
 Content-Type: application/json

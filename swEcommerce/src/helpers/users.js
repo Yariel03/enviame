@@ -54,8 +54,26 @@ const newSeller = async (idUser, wharehouse_address) => {
   }
 };
 
+const newMarketplaceUser = async (idUser, shipping_address) => {
+  let respuesta = "";
+  const query =
+    "INSERT INTO public.marketplace_user(id_user, shipping_address) VALUES (" +
+    idUser +
+    ", '" +
+    shipping_address +
+    "') returning id";
+  try {
+    respuesta = await pool.query(query);
+    return respuesta.rows[0];
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 module.exports = {
   newUsers,
   newrolUser,
   newSeller,
+  newMarketplaceUser,
 };
