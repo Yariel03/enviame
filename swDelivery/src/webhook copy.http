@@ -1,0 +1,57 @@
+### Crear orden con un producto
+POST http://localhost:4000/tracking/
+Content-Type: application/json
+    
+{
+    "order": {
+        "foreing_order_id": 1,
+        "product": [{
+            "sku": 1,
+            "name": "Producto 2",
+            "qty": 1
+        
+        }],
+        "origin": {
+            "addres": "bodega 1"
+        },
+
+        "destination": {
+            "name": "cliente 1",
+            "addres": "casa 1"
+        }
+    }
+}
+
+### Crear orden con varios productos
+POST http://localhost:4000/tracking/
+Content-Type: application/json
+    
+{
+    "order": {
+        "foreing_order_id": 2,
+        "product": [{
+            "sku": 1,
+            "name": "Producto 2",
+            "qty": 2
+        
+        },{
+            "sku": 2,
+            "name": "Producto 3",
+            "qty": 3
+         
+        }],
+        "origin": {
+            "addres": "bodega 1"
+        },
+
+        "destination": {
+            "name": "cliente 1",
+            "addres": "casa 1"
+        }
+    }
+}
+
+### Listar tracking
+GET http://localhost:4000/trackings/
+Content-Type: application/json
+    

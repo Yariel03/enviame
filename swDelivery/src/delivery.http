@@ -1,0 +1,10 @@
+### listar todos los productos con su respectivos vendedores
+POST http://localhost:4000/webhooks/notification
+Content-Type: application/json
+    
+{
+    "id_order": 4,
+    "id_order_state": 4
+}
+
+###

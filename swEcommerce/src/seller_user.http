@@ -1,5 +1,5 @@
 ###agregar Productos
-POST http://localhost:3001/seller/newproduct
+POST http://localhost:3000/seller/newproduct
 Content-Type: application/json
 
 {
@@ -10,16 +10,16 @@ Content-Type: application/json
 }
 
 ### listar Productos por vendedores
-GET http://localhost:3001/sellers/1/products
+GET http://localhost:3000/sellers/1/products
 Content-Type: application/json
 
 ### listar producto por id del vendedor y por id del producto
-GET http://localhost:3001/seller/1/product/1
+GET http://localhost:3000/seller/1/product/1
 Content-Type: application/json
 
 
 ### editar producto  por el vendedor y por el id del producto
-PUT http://localhost:3001/seller/1/product/5
+PUT http://localhost:3000/seller/1/product/5
 Content-Type: application/json
 
 {
@@ -29,19 +29,19 @@ Content-Type: application/json
 
 
 ### eliminar producto por vendedor y  por id del producto
-DELETE  http://localhost:3001/seller/1/product/7
+DELETE  http://localhost:3000/seller/1/product/7
 Content-Type: application/json
 
 
 ### listar todos las ordenes de sus productos
-GET http://localhost:3001/seller/1/orders/tipo/1
+GET http://localhost:3000/seller/1/orders/tipo/1
 Content-Type: application/json
 
 ### Modificar el status de una orden
-PUT http://localhost:3001/seller/order/1/state/2
+PUT http://localhost:3000/seller/order/1/state/2
 Content-Type: application/json
 
 
 ### Modificar el status de una orden
-PUT http://localhost:3001/seller/order/2/state/3
+PUT http://localhost:3000/seller/order/2/state/3
 Content-Type: application/json
