@@ -6,6 +6,7 @@ const {
   lnbuscarVendedor,
   lneditarVendedor,
   lneliminarVendedores,
+  lnlistarAllOrders,
 } = require("../ln/lnCrudVendedores.js");
 let respuesta = "";
 
@@ -19,5 +20,7 @@ router.put("/admin/seller/:id", lneditarVendedor);
 router.get("/admin/sellers", lnlistarVendedores);
 
 router.delete("/admin/seller/:id", lneliminarVendedores);
+
+router.get("/admin/orders", lnlistarAllOrders);
 
 module.exports = router;

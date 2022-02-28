@@ -34,7 +34,7 @@ Content-Type: application/json
 
 
 ### listar todos las ordenes de sus productos
-GET http://localhost:3001/seller/1/orders/
+GET http://localhost:3001/seller/1/orders/tipo/1
 Content-Type: application/json
 
 ### Modificar el status de una orden
@@ -43,5 +43,5 @@ Content-Type: application/json
 
 
 ### Modificar el status de una orden
-PUT http://localhost:3001/seller/order/4/state/3
+PUT http://localhost:3001/seller/order/2/state/3
 Content-Type: application/json

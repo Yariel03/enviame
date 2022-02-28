@@ -12,6 +12,18 @@ Content-Type: application/json
 PUT http://localhost:3001/marketplace/cancel/order/2/state/5
 Content-Type: application/json
 
+### ver order
+
+GET http://localhost:3001/seller/1/orders/
+Content-Type: application/json
+
+
+### listar Order todas sus ordenes 
+ http://localhost:3001/marketplace/1/orders/0
+Content-Type: application/json
+
+
+
 
 
 

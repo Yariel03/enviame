@@ -36,7 +36,12 @@ PUT http://localhost:3001/admin/seller/2
 Content-Type: application/json
 
 
+### Cancelar pedidos 
+
+PUT http://localhost:3001/marketplace/cancel/order/2/state/5
+Content-Type: application/json
 
 
-
-
+### listar Order todas las ordenes 
+ http://localhost:3001/admin/orders
+Content-Type: application/json

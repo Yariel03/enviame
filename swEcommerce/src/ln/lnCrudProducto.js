@@ -63,7 +63,7 @@ const lnbuyProduct = async (req, res) => {
 };
 
 const lnListarOrders = async (req, res) => {
-  respuesta = await allOrderSeller(req.params.idseller);
+  respuesta = await allOrderSeller(req.params.idseller, req.params.tipo);
   res.json(respuesta);
 };
 const lnUpdateStateOrders = async (req, res) => {
