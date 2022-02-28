@@ -26,6 +26,10 @@ const vendedor = async (id) => {
   const query = `SELECT * FROM seller_user A inner join usuario B on A.id_seller=B.id  WHERE A.id = ${id}`;
   return exec(query);
 };
+const listarAllOrders = async (id) => {
+  const query = `SELECT * FROM sellerwithproduct A inner join products B on A.id_product=B.id inner join public.order O on O.id_product=B.id inner join orderwithstate OWS on OWS.id_order=O.id inner join order_state OS on OS.id=OWS.id_order_state`;
+  return exec(query);
+};
 
 const updateVendedor = async (id, wharehouse_address) => {
   const query = `UPDATE seller_user SET wharehouse_address = '${wharehouse_address}' WHERE id = ${id}`;
@@ -57,4 +61,5 @@ module.exports = {
   vendedor,
   updateVendedor,
   deleteVendedor,
+  listarAllOrders,
 };

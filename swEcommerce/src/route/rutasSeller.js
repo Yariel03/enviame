@@ -21,7 +21,7 @@ router.put("/seller/:idseller/product/:idproduct", lneditarProduct);
 
 router.delete("/seller/:idseller/product/:idproduct", lneliminarProducts);
 
-router.get("/seller/:idseller/orders/", lnListarOrders);
+router.get("/seller/:idseller/orders/tipo/:tipo", lnListarOrders);
 
 router.put("/seller/order/:idorder/state/:state", lnUpdateStateOrders);
 

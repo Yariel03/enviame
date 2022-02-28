@@ -4,6 +4,7 @@ const {
   lnlistarAllProducts,
   lnbuyProduct,
   lnCancelOrder,
+  lnListarOrders,
 } = require("../ln/lnCrudProducto.js");
 
 // comment: listar todos los productos con sus vendedores
@@ -15,6 +16,8 @@ router.get(
 );
 
 router.put("/marketplace/cancel/order/:idorder/state/:state", lnCancelOrder);
+
+router.get("/marketplace/:idseller/orders/:tipo", lnListarOrders);
 
 // router.put("/admin/seller/:id", lneditarVendedor);
 

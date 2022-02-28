@@ -4,6 +4,7 @@ const {
   vendedor,
   updateVendedor,
   deleteVendedor,
+  listarAllOrders,
 } = require("../core/crudVendedor.js");
 
 const lninsertVendedores = async (req, res) => {
@@ -42,6 +43,10 @@ const lneditarVendedor = async (req, res) => {
   respuesta = await updateVendedor(req.params.id, wharehouse);
   res.json(respuesta);
 };
+const lnlistarAllOrders = async (req, res) => {
+  respuesta = await listarAllOrders(req.params.tipo);
+  res.json(respuesta);
+};
 
 module.exports = {
   lninsertVendedores,
@@ -49,4 +54,5 @@ module.exports = {
   lnbuscarVendedor,
   lneditarVendedor,
   lneliminarVendedores,
+  lnlistarAllOrders,
 };

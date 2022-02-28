@@ -69,8 +69,13 @@ const buyProduct = async (idProduct, cant, deliveryinformation, idUser) => {
   }
 };
 
-const allOrderSeller = async (idUser) => {
-  const query = `SELECT * FROM sellerwithproduct A inner join products B on A.id_product=B.id inner join public.order O on O.id_product=B.id inner join orderwithstate OWS on OWS.id_order=O.id inner join order_state OS on OS.id=OWS.id_order_state where A.id_seller = ${idUser}`;
+const allOrderSeller = async (idUser, tipo) => {
+  let query = "";
+  if (tipo != 0) {
+    query = `SELECT * FROM sellerwithproduct A inner join products B on A.id_product=B.id inner join public.order O on O.id_product=B.id inner join orderwithstate OWS on OWS.id_order=O.id inner join order_state OS on OS.id=OWS.id_order_state where A.id_seller = ${idUser}`;
+  } else {
+    query = `SELECT * FROM sellerwithproduct A inner join products B on A.id_product=B.id inner join public.order O on O.id_product=B.id inner join orderwithstate OWS on OWS.id_order=O.id inner join order_state OS on OS.id=OWS.id_order_state where O.id_user_marketplace = ${idUser}`;
+  }
   return exec(query);
 };
 const UpdateStateOrders = async (idOrder, state) => {
