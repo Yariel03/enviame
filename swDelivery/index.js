@@ -1,6 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 const { superPro, clear, success } = require("./src/helpers/message.js");
+const { Trackings, UpdateStateTracking } = require("./src/core/stateOrder");
+var CronJob = require("cron").CronJob;
+var job = new CronJob("*/5 * * * * *", async () => {
+  superPro("10 second");
+  let lstTracking = (await Trackings()).respuesta;
+  lstTracking.forEach(async (tracking) => {
+    await UpdateStateTracking(tracking.id, tracking.id_state + 1);
+  });
+});
+job.start();
 
 const app = express();
 const port = 3002;
