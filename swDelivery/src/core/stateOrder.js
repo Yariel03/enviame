@@ -75,6 +75,26 @@ const SelectHistoryTracking = async (id_tracking) => {
     return { success: false, error };
   }
 };
+
+const UpdateStateTracking = async (id, state) => {
+  if (state - 1 >= 5) {
+    return;
+  }
+  if (state - 1 == 4) {
+    const query = `UPDATE tracking set id_state = 3 where id= ${id} returning id`;
+    return exec(query);
+  } else {
+    if (state - 1 == 3) {
+      const random = Math.floor(Math.random() * 2) + 4;
+      const query = `UPDATE tracking set id_state = ${random} where id= ${id} returning id`;
+      return await exec(query);
+    } else {
+      const query = `UPDATE tracking set id_state = ${state} where id= ${id} returning id`;
+      return await exec(query);
+    }
+  }
+};
+
 const exec = async (SQL) => {
   try {
     const respuesta = await pool.query(SQL);
@@ -95,4 +115,5 @@ module.exports = {
   UpdateTracking,
   DeleteTracking,
   SelectHistoryTracking,
+  UpdateStateTracking,
 };

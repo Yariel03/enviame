@@ -53,6 +53,39 @@ const newTrackingAllProducts = async (idTracking, idProduct) => {
   }
 };
 
+const update30StateTracking = async (id_order) => {
+  let respuesta = "";
+  const query =
+    "SELECT id_order_state FROM public.orderwithstate WHERE id_order = " +
+    id_order +
+    ";";
+  try {
+    respuesta = await pool.query(query);
+    return respuesta.rows[0];
+  } catch (error) {
+    return error;
+  }
+};
+
+const currentStateTracking = async (id_order) => {
+  let respuesta = "";
+  const query =
+    "SELECT id_order_state FROM public.orderwithstate WHERE id_order = " +
+    id_order +
+    ";";
+  try {
+    respuesta = await pool.query(query);
+    return respuesta.rows[0];
+  } catch (error) {
+    return error;
+  }
+};
+
+const passToPass = async (currentState, newState) => {
+  let diff = newState - currentState;
+  return diff == 1 ? true : false;
+};
+
 module.exports = {
   newTracking,
   newProductTracking,
