@@ -54,4 +54,22 @@ Content-Type: application/json
 ### Listar tracking
 GET http://localhost:4000/trackings/
 Content-Type: application/json
+
+###Update tracking
+PUT http://localhost:4000/tracking/1
+Content-Type: application/json
     
+    {
+        "origin": "Mexico",
+        "name": "Angel",
+        "address": "masapan pro siempre"
+    
+    }
+
+###Delete tracking
+DELETE http://localhost:4000/tracking/7
+Content-Type: application/json
+
+###Listar historial de tracking
+GET http://localhost:4000/trackings/1/history
+Content-Type: application/json

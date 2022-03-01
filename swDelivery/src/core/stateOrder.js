@@ -45,7 +45,36 @@ const Trackings = async () => {
     return { success: false, error };
   }
 };
+const UpdateTracking = async (id_tracking, origin, name, address) => {
+  try {
+    const query = `UPDATE public.tracking SET  origin='${origin}', name_client='${name}', addres_client='${address}' WHERE id=${id_tracking}; `;
+    return exec(query);
+  } catch (error) {
+    return { success: false, error };
+  }
+};
+const DeleteTracking = async (id_tracking) => {
+  try {
+    const query = `DELETE FROM public.tracking WHERE id=${id_tracking};`;
+    return exec(query);
+  } catch (error) {
+    return { success: false, error };
+  }
+};
 
+const SelectHistoryTracking = async (id_tracking) => {
+  const query = `select * from tracking_history HI inner join tracking_state TS on TS.id=HI.id_status where HI.id_tracking=${id_tracking}`;
+  try {
+    const respuesta = await pool.query(query);
+    return {
+      success: true,
+      respuesta: respuesta.rows,
+      count: respuesta.rowCount,
+    };
+  } catch (error) {
+    return { success: false, error };
+  }
+};
 const exec = async (SQL) => {
   try {
     const respuesta = await pool.query(SQL);
@@ -63,4 +92,7 @@ module.exports = {
   UpdateStateOrders,
   InsertTracking,
   Trackings,
+  UpdateTracking,
+  DeleteTracking,
+  SelectHistoryTracking,
 };
