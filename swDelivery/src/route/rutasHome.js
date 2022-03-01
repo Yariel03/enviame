@@ -5,7 +5,7 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   res.status(200).json({
-    message: "Bienvenido a la api del test Ecommerce",
+    message: "Bienvenido a la api del test SwDelivery",
     info: "Funcionando al 100%",
     author: "Alexander Baldeon // @yarielbaldeon",
   });

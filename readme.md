@@ -4,7 +4,7 @@ Microservicios en contenedores para prueba tecnica
 
 # Diagrama DB
 
-![Alt text](/diagramas/db2.png)
+![Alt text](/diagramas/db2.svg)
 
 # Diagrama de Microservicios
 
